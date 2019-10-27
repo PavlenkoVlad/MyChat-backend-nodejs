@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <input type="text" name="messageInput">
+    <button onclick="send()">send</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost:3000/');
+      socket.on('chatMessage', (message) => {
+        console.log(message);
+      });
+      function send() {
+        var message = document.getElementsByName('messageInput')[0].value;
+        socket.emit('chatMessage', message);
+      }
+    </script>
+  </body>
+</html>
