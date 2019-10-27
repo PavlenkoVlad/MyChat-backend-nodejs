@@ -4,7 +4,7 @@
     <button onclick="send()">send</button>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io.connect('http://localhost:3000/');
+      var socket = io.connect('https://hidden-fjord-32367.herokuapp.com');
       socket.on('chatMessage', (message) => {
         console.log(message);
       });
